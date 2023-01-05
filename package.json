@@ -21,7 +21,8 @@
   "homepage": "https://github.com/kfahn22/toy_discord_bot#readme",
   "dependencies": {
     "discord.js": "^14.7.1",
-    "dotenv": "^16.0.3"
+    "dotenv": "^16.0.3",
+    "node-fetch": "^3.3.0"
   },
   "devDependencies": {
     "eslint": "^8.31.0"

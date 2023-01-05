@@ -7,11 +7,16 @@
 # Intall dependencies
 - `npm install discord.js`
 - `npm install dotenv`
-
+- `npm install node-fetch`
+ 
 ## Use SlashCommandBuilder class to add command definitions
- - The name of the file is the name of the slash command
- - hello.js is /hello:  .setName('hello')
- - description "Replies with emogies!":  .setDescription('Replies with emogies!')
- - interaction.reply '🚂🌈💖'
-  
+- The name of the file is the name of the slash command
+- choochoo.js is /choochoo:  .setName('choochoo')
+- description "Replies with emogies!":  .setDescription('Replies with emogies!')
+- interaction.reply '🚂🌈💖'
+
+##  Ephemeral response
+- To limit response to user who issued the slashCommand use `ephemeral=true`
+- [Guide](https://discordjs.guide/slash-commands/response-methods.html#ephemeral-responses)
+
 ## When you add commands rerun deply-commands.js
