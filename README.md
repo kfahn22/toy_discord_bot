@@ -2,6 +2,7 @@
 
 [Discord Guide](https://discordjs.guide/creating-your-bot/command-deployment.html#guild-commands)
 [Code Samples](https://github.com/discordjs/guide/blob/main/code-samples/creating-your-bot/command-handling/index.js)
+[Tenor](https://tenor.com)
 
 # Intall dependencies
 - `npm install discord.js`
