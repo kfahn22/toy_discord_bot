@@ -1,9 +1,11 @@
-# toy_discord_bot
-Toy Discord bot
+# Toy Discord Bot
+
+[Discord Guide](https://discordjs.guide/creating-your-bot/command-deployment.html#guild-commands)
+[Code Samples](https://github.com/discordjs/guide/blob/main/code-samples/creating-your-bot/command-handling/index.js)
 
 # Intall dependencies
-`npm install discord.js`
-`npm install dotenv`
+- `npm install discord.js`
+- `npm install dotenv`
 
 ## Use SlashCommandBuilder class to add command definitions
  - The name of the file is the name of the slash command
@@ -12,4 +14,3 @@ Toy Discord bot
  - interaction.reply '🚂🌈💖'
   
 ## When you add commands rerun deply-commands.js
-# Notes 
