@@ -1,10 +1,11 @@
 # Toy Discord Bot
 
+[Coding Train Discord Bot Choo Choo](https://github.com/CodingTrain/Discord-Bot-Choo-Choo)
 [Discord Guide](https://discordjs.guide/creating-your-bot/command-deployment.html#guild-commands)
 [Code Samples](https://github.com/discordjs/guide/blob/main/code-samples/creating-your-bot/command-handling/index.js)
 [Tenor](https://tenor.com)
 
-# Intall dependencies
+# Install dependencies
 - `npm install discord.js`
 - `npm install dotenv`
 - `npm install node-fetch`

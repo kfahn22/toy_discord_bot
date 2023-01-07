@@ -1,10 +1,13 @@
 const { SlashCommandBuilder } = require('discord.js');
 
+const replies = ["🚂🌈💖", "Choo choo!", "Ding! 🛎", "Never forget this dot!"];
+
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('choochoo')
 		.setDescription('Replies with emogies!'),
 	async execute(interaction) {
-		await interaction.reply('🚂🌈💖');
+    const index = Math.floor(Math.random() * replies.length);
+		await interaction.reply({ content: replies[index], ephemeral: true });
 	},
 };
