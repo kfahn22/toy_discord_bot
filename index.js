@@ -1,13 +1,13 @@
+console.log('Just keep swimming!!');
+
 const fs = require('node:fs');
 const path = require('node:path');
 const dotenv = require('dotenv');
-//const fetch = requre('node-fetch');
 dotenv.config();
 const clientId = process.env.clientId;
 const guildId = process.env.guildId;
 
 const { Client, Collection, Events, GatewayIntentBits } = require('discord.js');
-//const { token } = require('process.env');
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 

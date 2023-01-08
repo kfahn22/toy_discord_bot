@@ -4,6 +4,8 @@
 [Discord Guide](https://discordjs.guide/creating-your-bot/command-deployment.html#guild-commands)
 [Code Samples](https://github.com/discordjs/guide/blob/main/code-samples/creating-your-bot/command-handling/index.js)
 [Tenor](https://tenor.com)
+[Discord-tutorial](https://github.com/stuyy/djs-v14-tutorial/blob/master/src/commands/channel.js)
+[REST API Code](https://github.com/discordjs/guide/blob/main/code-samples/additional-info/rest-api/14/index.js)
 
 # Install dependencies
 - `npm install discord.js`
@@ -21,3 +23,6 @@
 - [Guide](https://discordjs.guide/slash-commands/response-methods.html#ephemeral-responses)
 
 ## When you add commands rerun deply-commands.js
+
+
+

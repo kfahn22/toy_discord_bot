@@ -1,6 +1,8 @@
-const { SlashCommandBuilder } = require('discord.js');
+//const { SlashCommandBuilder } = require('discord.js');
+import { SlashCommandBuilder } from '@discordjs/builders';
 
 const replies = ["🚂🌈💖", "Choo choo!", "Ding! 🛎", "Never forget this dot!"];
+
 
 module.exports = {
 	data: new SlashCommandBuilder()
@@ -11,3 +13,4 @@ module.exports = {
 		await interaction.reply({ content: replies[index], ephemeral: true });
 	},
 };
+
