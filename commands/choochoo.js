@@ -1,6 +1,4 @@
-//const { SlashCommandBuilder } = require('discord.js');
-import { SlashCommandBuilder } from '@discordjs/builders';
-
+const { SlashCommandBuilder } = require('discord.js');
 const replies = ["🚂🌈💖", "Choo choo!", "Ding! 🛎", "Never forget this dot!"];
 
 
