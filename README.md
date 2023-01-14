@@ -31,4 +31,6 @@
 - `node index.js`
 
 
+## Issue installing canvas on m1 mac:  I am getting an error trying to install canvas.  This is the same error that others have reported on Github.  
 
+- [Issue installing canvas on macs with m1 processors](https://github.com/Automattic/node-canvas/issues/1733)  
