@@ -8,17 +8,19 @@ module.exports = {
  
   data: new SlashCommandBuilder()
 		.setName('urban')
-		.setDescription('Replies with definition'),
- 
-  async execute(interaction) {
-		const term = interaction.options.getString('term');
+		.setDescription('Replies with definition')
+		.addStringOption(option =>
+            option.setName('term')
+            .setDescription('The term to return')),
+  async execute(interaction, term) {
+		//const term = interaction.options.getString('term');
 		const query = new URLSearchParams({ term });
 
 		const dictResult = await request(`https://api.urbandictionary.com/v0/define?${query}`);
 		const { list } = await dictResult.body.json();
 
 		if (!list.length) {
-			return interaction.reply(`No results found for **${term}**.`);
+			return interaction.deferReply(`No results found for **${term}**.`);
 		}
 
 		const [answer] = list;
@@ -35,6 +37,6 @@ module.exports = {
 					value: `${answer.thumbs_up} thumbs up. ${answer.thumbs_down} thumbs down.`,
 				},
 			);
-		interaction.reply({ embeds: [embed] });
+		interaction.deferReply({ embeds: [embed] });
   },
 };
