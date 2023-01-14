@@ -31,27 +31,24 @@ module.exports = {
             option.setName('keywords')
             .setDescription('The gif to return')),
 
-    async execute(interaction) {
-        //const url = `https://tenor.googleapis.com/v2/search?q=excited&media_filter=gif&key=${process.env.tenor_key}&client_key=${process.env.public_key}&&contentfilter=high`;
-        const url = `https://g.tenor.com/v1/search?q=codingtrain&key=${process.env.tenor_key}&contentfilter=high` // v1
+    async execute(interaction, keywords) {
+        const url = `https://tenor.googleapis.com/v2/search?q=${keywords}&media_filter=gif&key=${process.env.tenor_key}&client_key=${process.env.clientId}&&contentfilter=high`;
+        //const url = `https://g.tenor.com/v1/search?q=codingtrain&key=${process.env.tenor_key}&contentfilter=high` // v1
 
         const response = await fetch(url);
-        const {
-            json
-        } = await response.json();
+        const { json } = await response.json();
 
         //const index = Math.floor(Math.random() * json.results.length);
-        const {
-            gif
-        } = json.results[0]['media'][0]['gif']; //v1
-        //  const { gif } = results["media-formats"]['gif']['url']; // v2
+        // const {
+        //     gif
+        // } = json.results[0]['media'][0]['gif']; //v1
+        const { gif } = json.results[0]["media-formats"]['gif']; // v2
         const embed = new EmbedBuilder()
             .setColor(0xEFFF00)
             .setTitle('Gif from Tenor')
-        //  .setImage(gif.url)  // v2
-            .setImage(gif) //v 1
+            .setImage(gif.url) 
 
-        interaction.reply({
+        interaction.deferReply({
             embeds: [embed]
         });
     }
