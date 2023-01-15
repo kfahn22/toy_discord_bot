@@ -25,7 +25,7 @@
 
 ## To deploy
 
-### The file deploy-commands.js contains the code to run the files in the commands folder.  At present the files cat.js (returns a random cat gif), choochoo.js, and hello.js work as expected. 
+### The file deploy-commands.js contains the code to run the files in the commands folder.  At present the files cat.js (returns a random cat gif), choochoo.js, and hello.js return a reply, and urban.js returns a term from the urban dictionary.  I am having an issue with gif.js.  I don't think I am connecting to the API properly -- I am not sure what the issue is.
 
 - `node deply-commands.js` 
 - `node index.js`
