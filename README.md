@@ -24,7 +24,7 @@
 
 <img class="img" src="assets/developer.jpg" alt="Toggling developer  mode" style=" display: block;
     margin-left: auto;
-    margin-right: auto;" width="500" height="500">
+    margin-right: auto;" width="500" height="131">
 
 2.  Click on Application and fill in info to create new Application.  (Good idea to unclick public so other people can't add your bot to servers.)
 
