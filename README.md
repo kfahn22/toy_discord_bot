@@ -37,7 +37,7 @@
 5.  Click on URL generator and give the bot scopes and permissions.
 6.  For SCOPES, select bot and applications.commands.  For BOT PERMISSSIONS, I have selected Send Messages and Use Slash Commands
 
-<img class="img" src="assets/bot_scope.jpg" alt="Bot Permissions" style=" display: block;
+<img class="img" src="assets/bot_scope.png" alt="Bot Permissions" style=" display: block;
     margin-left: auto;
     margin-right: auto;" width="500" height="500">
 
@@ -47,7 +47,7 @@
 
 <img class="img" src="assets/enablebot.jpg" alt="Adding bot to a serve" style=" display: block;
     margin-left: auto;
-    margin-right: auto;" width="800" height="996">
+    margin-right: auto;" width="400" height="498">
 
 ## Running the bot
 
