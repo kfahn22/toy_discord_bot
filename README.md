@@ -42,9 +42,15 @@
 
 8.  Add the bot to a server.  Note that you must have permission to add the bot to the server.
 
-<img class="img" src="assets/enablebot.jpg" alt="Adding bot to a serve" style=" display: block;
+<img class="img" src="assets/enablebot.jpg" alt="Adding bot to a server" style=" display: block;
     margin-left: auto;
     margin-right: auto;" width="400" height="498">
+
+9.  Getting the bot token.  In Developer portal, Click on bot and then Reset Token.  Copy the token and paste in .env file
+
+<img class="img" src="assets/token.png" alt="Getting your bot token" style=" display: block;
+    margin-left: auto;
+    margin-right: auto;" width="800" height="409">
 
 ## Running the bot
 
@@ -53,8 +59,9 @@
 
 ## .env variables
 
-- bot id is clientId 
-- server id is guildId
+- token -- see above
+- clientId is bot id -- right click on bot and scroll to bottom to COPYID
+- guildId is server id -- right click on server and scroll to bottom to COPYID
 
 ## Important Changes
 
@@ -73,16 +80,16 @@
 
 - The name of the file is the name of the slash command, for example for `choochoo.js`
 
-`const { SlashCommandBuilder } = require('discord.js');
-const replies = ["🚂🌈💖", "Choo choo!", "Ding! 🛎", "Never forget this dot!"];
-module.exports = {
-	data: new SlashCommandBuilder()
-		.setName('choochoo')
-		.setDescription('Replies with emogies!'),
-	async execute(interaction) {
-    const index = Math.floor(Math.random() * replies.length);
-		await interaction.reply({ content: replies[index], ephemeral: true });
-	},
+`const { SlashCommandBuilder } = require('discord.js');  
+const replies = ["🚂🌈💖", "Choo choo!", "Ding! 🛎", "Never forget this dot!"];  
+module.exports = {   
+	data: new SlashCommandBuilder()  
+		.setName('choochoo')  
+		.setDescription('Replies with emogies!'),   
+	async execute(interaction) {   
+    const index = Math.floor(Math.random() * replies.length);   
+		await interaction.reply({ content: replies[index], ephemeral: true });   
+	},  
 };
 `
 
