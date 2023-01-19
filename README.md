@@ -30,7 +30,7 @@
 
 <img class="img" src="assets/bellabot.jpg" alt="Adding application" style=" display: block;
     margin-left: auto;
-    margin-right: auto;" width="500" height="500">
+    margin-right: auto;" width="1000" height="379">
 
 3.  Click on Bot and add bot to the Application
 4.  Click on Oauth
@@ -47,7 +47,7 @@
 
 <img class="img" src="assets/enablebot.jpg" alt="Adding bot to a serve" style=" display: block;
     margin-left: auto;
-    margin-right: auto;" width="500" height="500">
+    margin-right: auto;" width="800" height="996">
 
 ## Running the bot
 
@@ -68,16 +68,16 @@
 - `message` has been changed to `interaction`
 
 - I am using some built-in classes:
-- SlashCommandBuilder to add command modules
-- EmbedBuilder to add embeds (random.js)
-- AttachmentBuilder to add attachments (random.js)
+- `SlashCommandBuilder` to add command modules
+- `EmbedBuilder` to add embeds (random.js)
+- `AttachmentBuilder` to add attachments (random.js)
 
 ## Adding slash commands using the SlashCommandBuilder
 
 - The name of the file is the name of the slash command, for example for `choochoo.js`
-`const { SlashCommandBuilder } = require('discord.js');`
-`const replies = ["🚂🌈💖", "Choo choo!", "Ding! 🛎", "Never forget this dot!"];`
-`module.exports = {
+- `const { SlashCommandBuilder } = require('discord.js');`  
+- `const replies = ["🚂🌈💖", "Choo choo!", "Ding! 🛎", "Never forget this dot!"];`  
+- `module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('choochoo')
 		.setDescription('Replies with emogies!'),
