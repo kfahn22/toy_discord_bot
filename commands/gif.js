@@ -21,7 +21,7 @@ const {
     EmbedBuilder
 } = require('discord.js');
 
-const keywords = 'codingtrain';
+//const keywords = 'codingtrain';
 module.exports = {
 
     data: new SlashCommandBuilder()
