@@ -5,12 +5,10 @@
 // https://developers.google.com/tenor/guides/response-objects-and-errors#response-object
 // https://developers.google.com/tenor/guides/endpoints#javascript_1
 
-// Other
-// https://stackoverflow.com/questions/64425579/discord-embed-image-response
-// https://stackoverflow.com/questions/70705460/discord-js-tenor-api-error-displaying-image-from-embed
-// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse
+// https://discordjs.guide/slash-commands/parsing-options.html#command-options
 
-// I am using undici to fetch the url b/c I was getting an error with node-fetch
+// I am using undici to fetch the url b/c I was getting an error that an import was required with node-fetch
+// I am still getting an error that results is undefined, so I assume I am not connecting to tenor
 
 const {
     fetch
@@ -23,16 +21,16 @@ const {
 
 //const keywords = 'codingtrain';
 module.exports = {
-
     data: new SlashCommandBuilder()
         .setName('gif')
         .setDescription('Replies with gif')
         .addStringOption(option =>
             option.setName('keywords')
-            .setDescription('The gif to return')),
-
-    async execute(interaction, keywords) {
-        const url = `https://tenor.googleapis.com/v2/search?q=${keywords}&media_filter=gif&key=${process.env.tenor_key}&client_key=${process.env.clientId}&&contentfilter=high`;
+            .setDescription('The gif to return')
+            .setRequired(false)),
+    async execute(interaction) {
+        const keywords = interaction.options.getString('keywords') ?? 'codingtrain';
+        const url = `https://tenor.googleapis.com/v2/search?q=${keywords}&key=${process.env.tenor_key}&client_key=${process.env.clientId}&&contentfilter=high`;
         //const url = `https://g.tenor.com/v1/search?q=codingtrain&key=${process.env.tenor_key}&contentfilter=high` // v1
 
         const response = await fetch(url);
@@ -42,7 +40,7 @@ module.exports = {
         // const {
         //     gif
         // } = json.results[0]['media'][0]['gif']; //v1
-        const { gif } = json.results[0]["media-formats"]['gif']; // v2
+        const { gif } = json.results[0]["media_formats"]['gif']; // v2
         const embed = new EmbedBuilder()
             .setColor(0xEFFF00)
             .setTitle('Gif from Tenor')

@@ -9,9 +9,6 @@
 - [Coding Train Discord Bot Choo Choo](https://github.com/CodingTrain/Discord-Bot-Choo-Choo) 
 - [Discord Guide](https://discordjs.guide/#before-you-begin) 
 
-## Websites
-- [Tenor](https://tenor.com) 
-
 ## Install dependencies
 - `npm install discord.js`
 - `npm install dotenv`
@@ -89,5 +86,13 @@ module.exports = {
 };
 `
 
+## Connecting to Tenor 
 
+- [Tenor](https://tenor.com) 
+- [Tenor API guide](https://developers.google.com/tenor/guides/quickstart)
+- [Migrating from v1 to v2](https://developers.google.com/tenor/guides/migrate-from-v1)
+- [Updated URL](https://tenor.googleapis.com/v2/search?q=${kewords}&key=API_KEY&client_key=my_test_app&limit=8)
+
+- I am not positive whether a client key is now required or whether it is just suggested.  I am including the clientId.
+- I am getting an error when I try to use the /gif command.  I don't think I am connecting to the Tenor site, but I am not sure why.
 
