@@ -32,14 +32,6 @@ client.on(Events.InteractionCreate, async interaction => {
 
 	if (!command) return;
 
-	// if (commandName === 'urban') {
-	// 	const term = interaction.options.getString('term');
-	// 	const query = new URLSearchParams({ term });
-
-	// 	const dictResult = await request(`https://api.urbandictionary.com/v0/define?${query}`);
-	// 	const { list } = await dictResult.body.json();
-	// }
-
 	try {
 		await command.execute(interaction);
 	} catch (error) {

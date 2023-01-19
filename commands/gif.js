@@ -10,7 +10,7 @@
 // https://stackoverflow.com/questions/70705460/discord-js-tenor-api-error-displaying-image-from-embed
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse
 
-// Switched to undici b/c I was getting an error iwth node-fetch
+// I am using undici to fetch the url b/c I was getting an error with node-fetch
 
 const {
     fetch
