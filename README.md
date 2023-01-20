@@ -103,3 +103,7 @@ module.exports = {
 - I am not positive whether a client key is now required or whether it is just suggested.  I am including the clientId.
 - I am getting an error when I try to use the /gif command.  I don't think I am connecting to the Tenor site, but I am not sure why.
 
+##  Breaking changes when upgrading to v14
+
+[Breaking_Changes](https://stackoverflow.com/questions/73028854/discord-js-v13-code-breaks-when-upgrading-to-v14
+)
