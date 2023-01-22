@@ -33,7 +33,7 @@ module.exports = {
                     label: 'Mandelbulb',
                     description: 'Renders a mandelbulb point cloud',
                     value: '**Mandelbulb**',
-                    // emoji: '1066437493827834008'
+                    emoji: '1066756338799095948'
                 }, ]),
             );
         //await interaction.reply( {content: 'What is your favorite Coding Train challenge?', components: [row]});
