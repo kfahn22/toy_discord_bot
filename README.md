@@ -110,5 +110,5 @@ module.exports = {
 
 ## Adding custom emoji
 
-- You must reference the the number string associated with the emoji.  If you have custom emoji, you can find the number by typing \ and the emoji.  I have added a custom emoji called mandelbulb which is stored as the  object <:mandelbulb:1066437493827834008>.  To add it as an option, you would write:
-`emoji: '1066437493827834008'`
+- You must reference the the number string associated with the emoji.  If you have custom emoji, you can find the number by typing \ and the emoji.  I have added a custom emoji called mandelbulb which is stored as the  object <:mandelbulb:1066437493827834008>.  To add it as an option, I would write:
+`emoji: '1066437493827834008'`.  I believe that you have access to custom emojis written in servers you belong to, but I am not sure about others.
