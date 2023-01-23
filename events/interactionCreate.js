@@ -1,23 +1,29 @@
-const { Events } = require('discord.js');
-const fs = require('node:fs');
+// https://stackoverflow.com/questions/73028854/discord-js-v13-code-breaks-when-upgrading-to-v14
+// https://discord.js.org/#/docs/main/main/class/BaseInteraction?scrollTo=isStringSelectMenu
+
+const {
+	Events
+} = require('discord.js');
+const wait = require('node:timers/promises').setTimeout;
 
 module.exports = {
 	name: Events.InteractionCreate,
 	async execute(interaction) {
-		if (!interaction.isChatInputCommand()) return;
+		if (interaction.isChatInputCommand()) {
+			const command = interaction.client.commands.get(interaction.commandName);
 
-		const command = interaction.client.commands.get(interaction.commandName);
-
-		if (!command) {
-			console.error(`No command matching ${interaction.commandName} was found.`);
-			return;
+			try {
+				await command.execute(interaction);
+			} catch (error) {
+				console.error(`Error executing ${interaction.commandName}`);
+				console.error(error);
+			}
 		}
+	
+		if (interaction.customId === 'select-challenge') {
+			const selected = interaction.values.join(', ');
 
-		try {
-			await command.execute(interaction);
-		} catch (error) {
-			console.error(`Error executing ${interaction.commandName}`);
-			console.error(error);
+			await interaction.update(`The user selected ${selected}!`);
 		}
-	},
+	}
 };
