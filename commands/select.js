@@ -17,8 +17,8 @@ module.exports = {
         const row = new ActionRowBuilder()
             .addComponents(
                 new StringSelectMenuBuilder()
-                .setCustomId('challenge-select')
-                .setPlaceholder('Please select your favorite Coding Challenge')
+                .setCustomId('select-challenge')
+                .setPlaceholder('Please select your favorite Coding Train Challenge')
                 .setMinValues(1)
                 .setMaxValues(2)
                 .addOptions([{
@@ -33,7 +33,7 @@ module.exports = {
                     label: 'Mandelbulb',
                     description: 'Renders a mandelbulb point cloud',
                     value: '**Mandelbulb**',
-                    emoji: '1066756338799095948'
+                    emoji: '1066437493827834008'
                 }, ]),
             );
         //await interaction.reply( {content: 'What is your favorite Coding Train challenge?', components: [row]});
@@ -42,7 +42,7 @@ module.exports = {
             .setColor(0x0099FF)
             .setTitle('Favorite Coding Challenge')
             //.setURL('')
-            .setDescription('What is your favorite Coding Challenge');
+            .setDescription('What is your favorite Coding Challenge?');
 
         await interaction.reply({
             content: 'Select',
