@@ -42,7 +42,7 @@ module.exports = {
             .setColor(0x0099FF)
             .setTitle('Favorite Coding Challenge')
             //.setURL('')
-            .setDescription('What is your favorite Coding Challenge?');
+            .setDescription('What is your favorite Coding Train Challenge?');
 
         await interaction.reply({
             content: 'Select',
