@@ -107,3 +107,8 @@ module.exports = {
 
 [Breaking_Changes](https://stackoverflow.com/questions/73028854/discord-js-v13-code-breaks-when-upgrading-to-v14
 )
+
+## Adding custom emoji
+
+- You must reference the the number string associated with the emoji.  If you have custom emoji, you can find the number by typing \ and the emoji.  I have added a custom emoji called mandelbulb which is stored as the  object <:mandelbulb:1066437493827834008>.  To add it as an option, you would write:
+`emoji: '1066437493827834008'`
