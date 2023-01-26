@@ -71,27 +71,30 @@
 - Syntax changes
 - `message` has been changed to `interaction`
 
-- I am using some built-in classes:
+### I am using some built-in classes:
+
 - `SlashCommandBuilder` to add command modules
 - `EmbedBuilder` to add embeds (random.js)
 - `AttachmentBuilder` to add attachments (random.js)
+- `ActionRowBuilder` to add rows
+- `StringSelectMenuBuider` to add select options (select.js)
 
 ## Adding slash commands using the SlashCommandBuilder
 
 - The name of the file is the name of the slash command, for example for `choochoo.js`
 
-`const { SlashCommandBuilder } = require('discord.js');  
-const replies = ["🚂🌈💖", "Choo choo!", "Ding! 🛎", "Never forget this dot!"];  
-module.exports = {   
-	data: new SlashCommandBuilder()  
-		.setName('choochoo')  
-		.setDescription('Replies with emogies!'),   
-	async execute(interaction) {   
-    const index = Math.floor(Math.random() * replies.length);   
-		await interaction.reply({ content: replies[index], ephemeral: true });   
-	},  
-};
-`
+`const { SlashCommandBuilder } = require('discord.js');`     
+`const replies = ["🚂🌈💖", "Choo choo!", "Ding! 🛎", "Never forget this dot!"];`   
+`module.exports = {`  
+`	data: new SlashCommandBuilder()`  
+`		.setName('choochoo') `   
+`		.setDescription('Replies with emogies!'),`     
+`	async execute(interaction) {  `   
+`    const index = Math.floor(Math.random() * replies.length); `    
+`		await interaction.reply({ content: replies[index], ephemeral: true }); `    
+`	}, `   
+`};`  
+
 
 ## Connecting to Tenor 
 
