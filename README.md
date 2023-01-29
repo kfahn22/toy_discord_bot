@@ -81,7 +81,7 @@
 
 ## Adding slash commands using the SlashCommandBuilder
 
-- The name of the file is the name of the slash command, for example for `choochoo.js`
+- The convention is to name the file is the name of the slash command, for example for `choochoo.js`
 
 `const { SlashCommandBuilder } = require('discord.js');`     
 `const replies = ["🚂🌈💖", "Choo choo!", "Ding! 🛎", "Never forget this dot!"];`   
