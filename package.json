@@ -2,10 +2,11 @@
   "name": "discord_bot",
   "version": "1.0.0",
   "description": "Exploring the process of creating a discord bot",
-  "main": "index.js",
+  "main": "bot.js",
   "scripts": {
-    "test": "node index.js"
+    "test": "node bot.js"
   },
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kfahn22/Discord_bot.git"

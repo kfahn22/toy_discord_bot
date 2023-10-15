@@ -1,53 +1,50 @@
-// Legacy Tenor v1
-// https://tenor.com/gifapi/documentation#quickstart-search
-// Tenor v2
-// https://developers.google.com/tenor/guides/quickstart#setup
-// https://developers.google.com/tenor/guides/response-objects-and-errors#response-object
-// https://developers.google.com/tenor/guides/endpoints#javascript_1
+// Importing modules using ES6 syntax
+import { SlashCommandBuilder, EmbedBuilder } from "discord.js";
 
-// https://discordjs.guide/slash-commands/parsing-options.html#command-options
+export const data = new SlashCommandBuilder()
+  .setName("gif")
+  .setDescription("Searches Tenor for gifs!")
+  .addStringOption((option) =>
+    option
+      .setName("keywords")
+      .setDescription("The keywords to search Tenor with")
+  );
 
-// I am using undici to fetch the url b/c I was getting an error that an import was required with node-fetch
-// I am still getting an error that results is undefined, so I assume I am not connecting to tenor
+// Execute function to interact with Tenor API and reply with a GIF
+export async function execute(interaction) {
+  // Initially acknowledging the command interaction
+  // can use { ephemeral: true } for reply to be seen by user only
+  await interaction.deferReply();
 
-const {
-    fetch
-} = require('undici');
+  // Default keyword set to 'kitten' if none provided
+  let defaultKeyword = "kitten";
+  const keywords = interaction.options.getString("keywords") ?? defaultKeyword;
 
-const {
-    SlashCommandBuilder,
-    EmbedBuilder
-} = require('discord.js');
+  // URL constructed with the provided or default keyword
+  let url = `https://tenor.googleapis.com/v2/search?q=${keywords}&key=${process.env.TENORKEY}&client_key=a2z_discord_bot&contentfilter=high`;
 
-//const keywords = 'codingtrain';
-module.exports = {
-    data: new SlashCommandBuilder()
-        .setName('gif')
-        .setDescription('Replies with gif')
-        .addStringOption(option =>
-            option.setName('keywords')
-            .setDescription('The gif to return')
-            .setRequired(false)),
-    async execute(interaction) {
-        const keywords = interaction.options.getString('keywords') ?? 'codingtrain';
-        const url = `https://tenor.googleapis.com/v2/search?q=${keywords}&key=${process.env.tenor_key}&client_key=${process.env.clientId}&&contentfilter=high`;
-        //const url = `https://g.tenor.com/v1/search?q=codingtrain&key=${process.env.tenor_key}&contentfilter=high` // v1
+  // Fetching data from Tenor API
+  let response = await fetch(url);
+  let json = await response.json();
+  console.log(json);
+  console.log(json.results[0].media_formats);
 
-        const response = await fetch(url);
-        const { json } = await response.json();
+  // Randomly select a GIF from the response
+  const index = Math.floor(Math.random() * json.results.length);
 
-        //const index = Math.floor(Math.random() * json.results.length);
-        // const {
-        //     gif
-        // } = json.results[0]['media'][0]['gif']; //v1
-        const { gif } = json.results[0]["media_formats"]['gif']; // v2
-        const embed = new EmbedBuilder()
-            .setColor(0xEFFF00)
-            .setTitle('Gif from Tenor')
-            .setImage(gif.url) 
+  // Creating an embed to display the GIF in the Discord message
+  const embed = new EmbedBuilder()
+    .setColor("#0099ff")
+    .setTitle(`GIF from Tenor: ${keywords}`)
+    .setURL(json.results[index].url)
+    .setImage(json.results[index].media_formats.gif.url)
+    .setFooter({ text: "Powered by Tenor" })
+    .setAuthor({ name: "A2Z Bot" })
+    .setThumbnail(json.results[index].media_formats.tinygif.url); // 5. Thumbnail
 
-        interaction.deferReply({
-            embeds: [embed]
-        });
-    }
+  // Following up with the selected GIF embedded in the message
+  await interaction.followUp({
+    embeds: [embed],
+    content: "GIF from Tenor: " + keywords,
+  });
 }

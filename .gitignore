@@ -1,3 +1,14 @@
 node_modules
 .env
 config.json
+
+// Still working on
+deploy-commands copy.js
+commands.js
+commands copy
+events
+commands/quiz.js
+commands/questions.json
+
+index copy.js
+index.js
