@@ -25,5 +25,6 @@ module.exports = {
 
       await interaction.update(`The user selected ${selected}!`);
     }
+
   },
 };

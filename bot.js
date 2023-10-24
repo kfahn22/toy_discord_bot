@@ -8,6 +8,7 @@ import * as randomwalk from "./commands/randomwalk.js";
 import * as roshambo from "./commands/roshambo.js";
 import * as select from "./commands/select.js";
 import * as quiz from "./commands/quiz.js";
+import * as jokes from "./commands/jokes.js";
 
 // Call the config() function on dotenv to load the environmental variables from the .env file
 config();
@@ -52,6 +53,8 @@ client.on(Events.InteractionCreate, async (interaction) => {
     await select.execute(interaction);
   } else if (interaction.commandName === "quiz") {
     await quiz.execute(interaction);
+  } else if (interaction.commandName === "joke") {
+    await jokes.execute(interaction);
   }
 });
 
