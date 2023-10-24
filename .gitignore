@@ -9,6 +9,6 @@ commands copy
 events
 commands/quiz.js
 commands/questions.json
-
+commands/.DS_Store
 index copy.js
 index.js
